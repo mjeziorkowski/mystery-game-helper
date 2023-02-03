@@ -1,0 +1,23 @@
+{
+  "rooms": [
+    "room1",
+    "room2",
+    "room3",
+    "room4",
+    "room5",
+    "room6",
+    "room7",
+    "room8",
+    "room9"
+  ],
+  "suspects": [
+    "suspect1",
+    "suspect2",
+    "suspect3",
+    "suspect4",
+    "suspect5",
+    "suspect6",
+    "suspect7"
+  ],
+  "tools": ["tool1", "tool2", "tool3", "tool4", "tool5", "tool6", "tool7"]
+}

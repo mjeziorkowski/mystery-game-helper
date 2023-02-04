@@ -1,5 +1,9 @@
 # Nuxt 3 Minimal Starter
 
+#TODO: Function for disabling all remaing fields after knowing all cards
+#TODO: Add logic for final guess
+#
+
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup

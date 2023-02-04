@@ -1,23 +1,25 @@
 <template>
-  <InitialGameSetupPlayer
-    v-if="!userSettingsReady"
-    @submit="userSettingsReady = true"
+  <InitialOwnerSetup
+    v-for="element in componentsToRender"
+    :title="element.name"
+    :elements="element.value"
   />
-  <InitialGameSetupGame
-    v-if="userSettingsReady && !gameSettingsReady"
-    @submit="gameSettingsReady = true"
-  />
-  <button v-if="userSettingsReady && gameSettingsReady" @clik="finished()">
-    Start the game
-  </button>
+  <button @click="emit('setupFinished')">Setup finished</button>
 </template>
 
-<script lang="ts" setup>
-const userSettingsReady = ref(false);
-const gameSettingsReady = ref(false);
+<script setup lang="ts">
+import { useGameDataStore } from "~~/stores/gameData";
 
-const emit = defineEmits(["submit"]);
-function finished() {
-  emit("submit");
-}
+const gameDataStore = useGameDataStore();
+
+const componentsToRender = Object.entries(gameDataStore.elements).map(
+  ([key, value]) => {
+    return {
+      name: key,
+      value: value,
+    };
+  }
+);
+
+const emit = defineEmits(["setupFinished"]);
 </script>
